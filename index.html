@@ -7,8 +7,93 @@
 <body>
 
   <script>
-    // Your JavaScript goes here!
-    console.log("Hello, World!")
+
+  // Create a list variable named ‘choices’.
+	// -It contains ‘Rocks’, ‘Papers’, ‘Scissors’
+      const choices = ['Rock', 'Paper', 'Scissors'];
+
+  // Create a function name computerPlay
+  // 	-This function will basically return a random string from the choices array.
+      function computerPlay(choices){
+        let result = choices[Math.floor(Math.random()*choices.length)].toUpperCase()
+        return result
+      };
+
+  // Create a variable named userChoice and set the initial value to a string ‘ ‘
+      let userChoice = prompt("Rock, Paper or Scissors", "").toUpperCase();
+
+  // Create a function that plays a single round of Rock Paper Scissors.
+  //The function should take two parameters - the playerSelection and computerSelection
+      function letsPlay(playerSelection, computerSelection){
+  // 	-Then compare the userChoice and the computerChoice by using switch statements:
+  // 		-Expression is computerChoice
+        switch(computerSelection){
+          // -Case 1 would be ‘Rock’
+          // 		- If computerChoice is ‘Rock’ and userChoice is ‘Paper’:
+          // 		  -Print out (‘You played PAPER and the computer played ROCK - You won!‘)
+          // 			-Then change the playing value to False to end the while loop and end the game
+          // 		-Else if computerChoice is ‘Rock’ and userChoice is ‘Scissor’:
+          // 				-Print out (‘You played SCISSOR and the computer played ROCK - You lost!‘)
+          // 				-Then change the playing value to False to end the while loop and end the game
+          // 		-Else
+          // 				-Print out (‘You played ROCK and the computer played ROCK - It’s a tie!‘)
+          case 'ROCK':
+            if (userChoice == 'PAPER'){
+              return "You played PAPER and the computer played ROCK - You won!";
+              break;
+            }else if (userChoice == 'SCISSORS'){
+              return "You played SCISSORS and the computer played ROCK - You lost!";
+              break;
+            }else{
+              return "You played ROCK and the computer played ROCK - It is a tie!";
+              break;
+            }
+            //-Case 2 would be ‘Paper’
+            // 	- If computerChoice is ‘Paper’ and userChoice is ‘Scissor’:
+            // 			-Print out (‘You played SCISSOR and the computer played PAPER - You won!‘)
+            // 			-Then change the playing value to False to end the while loop and end the game
+            // 	- If computerChoice is ‘Paper’ and userChoice is ‘Rock’:
+            // 			-Print out (‘You played ROCK and the computer played PAPER - You lost!‘)
+            // 			-Then change the playing value to False to end the while loop and end the game
+            // 	- If computerChoice is ‘Paper’ and userChoice is ‘Paper’:
+            // 			-Print out (‘You played PAPER and the computer played PAPER - It’s a tie!‘)
+          case 'PAPER':
+            if (userChoice == 'SCISSORS'){
+              return "You played SCISSORS and the computer played PAPER - You won!";
+              break;
+            }else if (userChoice == 'ROCK'){
+              return "You played ROCK and the computer played PAPER - You lost!";
+              break;
+            }else{
+              return "You played PAPER and the computer played PAPER - It's a tie!";
+              break;
+            }
+            //-Case 3 would be ‘Scissor’
+            // 	- If computerChoice is ‘Scissor’ and userChoice is ‘Rock’:
+            // 			-Print out (‘You played ROCK and the computer played SCISSOR - You won!‘)
+            // 			-Then change the playing value to False to end the while loop and end the game
+            // 	- If computerChoice is ‘Scissor’ and userChoice is ‘Paper’:
+            // 			-Print out (‘You played PAPER and the computer played SCISSOR - You lost!‘)
+            // 			-Then change the playing value to False to end the while loop and end the game
+            // 	- If computerChoice is ‘Scissor’ and userChoice is ‘Scissor’:
+            // 			-Print out (‘You played SCISSOR and the computer played SCISSOR - It’s a tie!‘)
+            // 			-Continue the game ****
+          case 'SCISSORS':
+          if (userChoice == 'ROCK'){
+            return "You played ROCK and the computer played SCISSORS - You won!";
+            break;
+          }else if (userChoice == 'PAPER'){
+            return "You played PAPER and the computer played SCISSORS - You lost!";
+            break;
+          }else{
+            return "You played SCISSORS and the computer played SCISSORS - You lost!";
+            break;
+          }
+        }
+}
+
+
+
   </script>
 
 </body>
